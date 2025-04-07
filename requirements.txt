@@ -14,7 +14,6 @@ cfgv==3.4.0
 chardet==4.0.0
 charset-normalizer==3.4.1
 chevron==0.13.1
-cloud-init
 colorama==0.4.4
 configobj==5.0.6
 cryptography==36.0.1
