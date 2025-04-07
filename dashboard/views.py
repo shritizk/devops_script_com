@@ -4,14 +4,10 @@ from django.contrib import messages
 from django.core.mail import send_mail
 
 # utils 
-from .utils import *
 from dashboard.models import ScriptInfo 
 
-# db 
-import boto3
-from botocore.exceptions import ClientError
 
-dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+
 
 #import 
 import uuid 
