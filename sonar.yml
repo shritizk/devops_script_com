@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
@@ -8,17 +7,15 @@ phases:
     commands:
       - pip install --upgrade pip
       - pip install -r requirements.txt
-
   pre_build:
     commands:
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
       - unzip sonar-scanner-cli-5.0.1.3006-linux.zip
-      - rm -rf sonar-scanner-5.0.1.3006-linux/jre  # Remove incompatible JRE
       - export PATH=$PATH:$(pwd)/sonar-scanner-5.0.1.3006-linux/bin
-      - export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))  # Set JAVA_HOME
-
   build:
     commands:
       - echo "JAVA_HOME is $JAVA_HOME"
+      - java -version
+      - ls -al
       - echo "Running SonarScanner..."
       - sonar-scanner
