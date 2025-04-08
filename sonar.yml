@@ -14,8 +14,6 @@ phases:
       - export PATH=$PATH:$(pwd)/sonar-scanner-5.0.1.3006-linux/bin
   build:
     commands:
-      - echo "JAVA_HOME is $JAVA_HOME"
-      - java -version
       - ls -al
       - echo "Running SonarScanner..."
       - sonar-scanner
