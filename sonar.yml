@@ -1,0 +1,41 @@
+sonar.yml
+ 
+version: 0.2
+
+phases:
+
+  install:
+
+    runtime-versions:
+
+      python: 3.11
+
+      java: corretto11
+
+    commands:
+
+      - pip install --upgrade pip
+
+      - pip install -r requirements.txt
+
+  pre_build:
+
+    commands:
+
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+
+      - unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+
+      - export PATH=$PATH:$(pwd)/sonar-scanner-5.0.1.3006-linux/bin
+
+  build:
+
+    commands:
+
+      - ls -al
+
+      - echo "Running SonarScanner..."
+
+      - sonar-scanner
+
+ 
